@@ -14,10 +14,19 @@ public class PopcornEffect : MonoBehaviour
     public float animationDuration = 1.5f; // 애니메이션 지속 시간
     public float fadeDuration = 0.5f;  // 페이드 아웃 시간
 
+    private ulong valuePerClick = 1;
+
+    public void OnClick()
+    {
+        GameManager.Instance.AddEgg(valuePerClick);
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))  // 마우스 클릭 감지
         {
+            OnClick();
+
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPosition.z = 0;  // 2D 환경에서는 Z축을 0으로 설정
 

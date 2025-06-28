@@ -43,7 +43,7 @@ public class AutoProducer : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (timer >= interval)
         {
             timer = 0;
-            GameManager.Instance.AddHeight(valuePerTick);
+            GameManager.Instance.AddEgg(valuePerTick);
             totalProducedAmount += valuePerTick;
         }
     }

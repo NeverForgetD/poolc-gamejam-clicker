@@ -11,6 +11,6 @@ public class ClickButtonHook : MonoBehaviour
 
     public void OnClick()
     {
-        GameManager.Instance.AddHeight(valuePerTick);
+        GameManager.Instance.AddEgg(valuePerTick);
     }
 }

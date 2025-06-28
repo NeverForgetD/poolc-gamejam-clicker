@@ -23,7 +23,9 @@ public class TickManager : MonoBehaviour
             {
                 p.Tick();
                 p.ResetInfo();
+
             }
+            GameManager.Instance.ShootEgg();
             timer = 0.0f;
         }
     }

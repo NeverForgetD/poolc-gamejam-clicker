@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI heightText;
+    [SerializeField] private TextMeshProUGUI eggText;
 
 
     /// <summary>
@@ -34,8 +34,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        heightText.text = $"³ôÀÌ : {FormatLengthAuto(GameManager.Instance.height)}\n" +
-            $"´Þ°¿ : {GameManager.Instance.egg} °³";
+        eggText.text = $"²¿²¿ÆÄ¿ö : {GameManager.Instance.egg}";
         
 
         

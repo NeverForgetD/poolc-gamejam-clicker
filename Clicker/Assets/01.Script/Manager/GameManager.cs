@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public ulong height { get; set; }
     public ulong egg { get; set; }
-    private ulong nextEggThreshold = 10;
-    private ulong eggThresholdStep = 10;
+    //private ulong nextEggThreshold = 10;
+    //private ulong eggThresholdStep = 10;
 
     private void Awake()
     {
@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
 
     public void AddHeight(ulong amount)
     {
-        height += amount;
-        AddEgg(amount);
+        //height += amount;
+        //AddEgg(amount);
         /*
         while (height >= nextEggThreshold)
         {
@@ -45,13 +45,10 @@ public class GameManager : MonoBehaviour
     public void AddEgg(ulong amount)
     {
         egg += amount;
-        for(int i = 0; i < (int)amount; i++)
-        {
-            ShootEgg();
-        }
+        //ShootEgg();
     }
 
-    private void ShootEgg()
+    public void ShootEgg()
     {
         GameObject eggObj = Instantiate(eggPrefab, chickenPosition.position, Quaternion.identity);
 
@@ -64,11 +61,6 @@ public class GameManager : MonoBehaviour
         rb.AddForce(direction * shootForce, ForceMode2D.Impulse);
 
         SoundManager.Instance.PlaySFXRandomPitch("00Egg", 0.45f, 1.0f);
-    }
-
-    public void ShootEggPerTick()
-    {
-
     }
 
     public bool TryUseEgg(ulong amount)

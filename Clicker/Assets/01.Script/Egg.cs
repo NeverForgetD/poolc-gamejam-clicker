@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour
 {
-    [SerializeField] private float lifeTime = 1f;
+    [SerializeField] private float lifeTime = 3f;
 
     private Rigidbody2D rb;
 
