@@ -34,8 +34,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        heightText.text = $"≥Ù¿Ã :{FormatLengthAuto(HeightManager.Instance.height)}\n" +
-            $"¥ﬁ∞ø : {HeightManager.Instance.height/100}∞≥";
+        heightText.text = $"≥Ù¿Ã : {FormatLengthAuto(HeightManager.Instance.height)}\n" +
+            $"¥ﬁ∞ø : {HeightManager.Instance.egg} ∞≥";
         
 
         
