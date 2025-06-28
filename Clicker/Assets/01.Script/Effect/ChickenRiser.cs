@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class ChickenRiser : MonoBehaviour
 {
-    [SerializeField] private float moveAmount = 0.01f; // 클릭 시 올라갈 거리
+    [SerializeField] private float moveAmount = 0.005f; // 클릭 시 올라갈 거리
     [SerializeField] private float moveSpeed = 0.4f;   // 올라가는 속도
     [SerializeField] private float topY = 10f;          // 최고 위치 Y
     [SerializeField] private float bottomY = -10f;      // 시작 위치 Y
