@@ -9,8 +9,8 @@ public class HeightManager : MonoBehaviour
     /// </summary>
     public ulong height { get; set; }
     public ulong egg { get; set; }
-    private ulong nextEggThreshold = 1000;
-    private ulong eggThresholdStep = 1000;
+    private ulong nextEggThreshold = 10;
+    private ulong eggThresholdStep = 10;
 
     private void Awake()
     {
@@ -56,5 +56,7 @@ public class HeightManager : MonoBehaviour
         Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.down;
 
         rb.AddForce(direction * shootForce, ForceMode2D.Impulse);
+
+        SoundManager.Instance.PlaySFXRandomPitch("00Egg", 0.45f, 1.0f);
     }
 }

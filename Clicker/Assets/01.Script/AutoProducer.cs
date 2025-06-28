@@ -1,6 +1,7 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class AutoProducer : MonoBehaviour, IHoverDescribable
+public class AutoProducer : MonoBehaviour
 {
     [SerializeField] private string producerName;
     [SerializeField] private int interval;
@@ -8,20 +9,18 @@ public class AutoProducer : MonoBehaviour, IHoverDescribable
 
     [SerializeField] private int upgradeCost;
 
-    private int cost;
-    private float costGR;
+    private float costRatio = 1.2f;
+
     private int level = 0;
     private ulong totalProducedAmount = 0;
     // 업그레이드 정보
 
     private int timer = 0;
 
-    public void Initialize(string name, int interval, ulong valuePerTick)
+    public bool CanUpgrade()
     {
-        this.producerName = name;
-        this.interval = interval;
-        this.valuePerTick = valuePerTick;
-        this.timer = 0;
+
+        return false;
     }
 
     public void Tick()
@@ -39,7 +38,7 @@ public class AutoProducer : MonoBehaviour, IHoverDescribable
     {
         return $"{producerName}\n" +
                $"레벨: {level}\n" +
-               $"업그레이드 비용: {cost}\n" +
+               $"업그레이드 비용: {upgradeCost}\n" +
                $"초당 생산량: {valuePerTick} / {interval}초\n" +
                $"총 생산량: {totalProducedAmount}";
     }

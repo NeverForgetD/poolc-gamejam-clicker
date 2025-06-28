@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ClickButtonHook : MonoBehaviour, IHoverDescribable
+public class ClickButtonHook : MonoBehaviour
 {
     private ulong valuePerTick;
 
@@ -12,9 +12,5 @@ public class ClickButtonHook : MonoBehaviour, IHoverDescribable
     public void OnClick()
     {
         HeightManager.Instance.AddHeight(valuePerTick);
-    }
-    public string GetHoverDescription()
-    {
-        return "그저 닭이다";
     }
 }

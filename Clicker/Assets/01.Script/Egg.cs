@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour
 {
-    [SerializeField] private float lifeTime = 3f;
+    [SerializeField] private float lifeTime = 1f;
 
     private Rigidbody2D rb;
-    private bool exploded = false;s
 
     private void Awake()
     {
@@ -14,7 +13,6 @@ public class Egg : MonoBehaviour
 
     private void OnEnable()
     {
-        exploded = false;
         Invoke(nameof(DestroySelf), lifeTime);
     }
 
