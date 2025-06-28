@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class AutoProducer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string producerName;
+    [SerializeField] private string info;
     [SerializeField] private int interval;
     private ulong valuePerTick = 0;
     [SerializeField] private ulong gain;

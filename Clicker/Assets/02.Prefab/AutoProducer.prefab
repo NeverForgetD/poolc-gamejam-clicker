@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 324, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2131178074688868346
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5C5\uADF8\uB808\uC774\uB4DC \uC815\uBCF4"
+  m_text: "\uBD80\uD654\uAE30 (+0)\n50 \uD544\uC694"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35a2cba21fe36a84da775a6cd9e0d247, type: 2}
   m_sharedMaterial: {fileID: 2762883469255914263, guid: 35a2cba21fe36a84da775a6cd9e0d247, type: 2}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.2
+  m_fontSize: 72
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 34.148132, y: 11.380962, z: 38.40428, w: 7.8241196}
+  m_margin: {x: 34.148132, y: 11.380962, z: -562.18506, w: 7.8241196}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -249,7 +249,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 200}
+  m_SizeDelta: {x: 331, y: 355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &146601454497706355
 CanvasRenderer:
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5993112012373322873, guid: e1cf65e9264c10e46b37d1348b2a86cc, type: 3}
+  m_Sprite: {fileID: -5591740273588857383, guid: dd6047d512c2d03449a8f179c9174a04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   producerName: 
+  info: 
   interval: 0
   gain: 0
   upgradeCost: 0

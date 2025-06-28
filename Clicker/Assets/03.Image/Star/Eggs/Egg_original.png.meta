@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a554b57a0b4c6ad429d226646230cdd2
+guid: ea42013065c749d4298e3a8a925c1ae9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7295458333705716979
-    second: Egg_gold_0
+      213: 6903532534455122282
+    second: Egg_original_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Egg_gold_0
+      name: Egg_original_0
       rect:
         serializedVersion: 2
         x: 6
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f4413693bcae3560800000000000000
-      internalID: 7295458333705716979
+      spriteID: a69bc8b73464ecf50800000000000000
+      internalID: 6903532534455122282
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Egg_gold_0: 7295458333705716979
+      Egg_original_0: 6903532534455122282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

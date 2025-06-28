@@ -74,4 +74,18 @@ public class GameManager : MonoBehaviour
             { return false; }
     }
 
+    public ulong clickBonus { get; set; } = 0;
+
+    public void AddClickBonus(ulong amount)
+    {
+        clickBonus += amount;
+    }
+
+
+    public ulong totalClickEarnedEgg = 0;
+    public void OnClick()
+    {
+        AddEgg(1 + clickBonus);
+        totalClickEarnedEgg += (1 + clickBonus);
+    }
 }

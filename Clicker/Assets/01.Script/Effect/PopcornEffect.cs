@@ -6,19 +6,17 @@ public class PopcornEffect : MonoBehaviour
     public GameObject ballPrefab; // 하나의 공 프리팹
     public Sprite[] ballSprites;  // 공 이미지 배열
 
-    [Header("Ball Count Range")]
-    public int minBallCount = 2;   // 최소 공 개수 (Inspector에서 설정)
-    public int maxBallCount = 6;  // 최대 공 개수 (Inspector에서 설정)
+    //[Header("Ball Count Range")]
+    //public int minBallCount = 2;   // 최소 공 개수 (Inspector에서 설정)
+    //public int maxBallCount = 6;  // 최대 공 개수 (Inspector에서 설정)
 
     public float explosionForce = 15f;  // 폭발력 (Inspector에서 설정)
     public float animationDuration = 1.5f; // 애니메이션 지속 시간
     public float fadeDuration = 0.5f;  // 페이드 아웃 시간
 
-    private ulong valuePerClick = 1;
-
     public void OnClick()
     {
-        GameManager.Instance.AddEgg(valuePerClick);
+        GameManager.Instance.OnClick();
     }
 
     void Update()
@@ -38,7 +36,8 @@ public class PopcornEffect : MonoBehaviour
     {
         SoundManager.Instance.PlaySFX("Bloop");
         // Inspector에서 지정한 범위 내에서 랜덤한 공 개수 설정
-        int ballCount = Random.Range(minBallCount, maxBallCount + 1);
+        //int ballCount = Random.Range(minBallCount, maxBallCount + 1);
+        int ballCount = Mathf.Min((int)(GameManager.Instance.clickBonus) + 1, 10);
 
         for (int i = 0; i < ballCount; i++)
         {
