@@ -59,15 +59,16 @@ public class AutoProducer : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                $"누적 생산량: {totalProducedAmount}";
         */
         return $"강화레벨: {level}\n" +
-       $"초당 생산량: {valuePerTick} / {interval}초\n" +
-       $"누적 생산량: {totalProducedAmount}";
+       $"생산량: {valuePerTick} / {interval}초\n" +
+       $"누적 생산량: {totalProducedAmount}\n\n" +
+       $"{info}";
     }
 
     public void ResetInfo()
     {
         tooltipText.text = GetHoverDescription();
-        buttonText.text = $"{producerName} [{upgradeCost}]\n" +
-                            $"초당 생산량 : {valuePerTick/(ulong)interval}";
+        buttonText.text = $"{producerName} [x{upgradeCost}]\n\n" +
+                            $"생산량 : {valuePerTick} / {interval}";
     }
 
 

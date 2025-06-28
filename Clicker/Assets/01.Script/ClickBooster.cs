@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 public class ClickBooster : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string boosterName;
+    [SerializeField] private string info;
     [SerializeField] private ulong clickGainPerLevel;
     [SerializeField] private int upgradeCost;
-    private float costRatio = 2f;
+    private float costRatio = 1.4f;
     private int level = 0;
 
     [SerializeField] private TextMeshProUGUI buttonText;
@@ -34,15 +35,16 @@ public class ClickBooster : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     private string GetHoverDescription()
     {
-        return $"클릭 강화 레벨: {level}\n" +
-               $"클릭당 꼬꼬파워 생산량: {1 + level}\n"
-               + $"누적 클릭 꼬꼬파워 획득량{GameManager.Instance.totalClickEarnedEgg}";
+        return $"클릭 강화 레벨 : {level}\n" +
+               $"클릭당 꼬꼬파워 +{1 + level}\n"
+               + $"누적 꼬꼬파워 : {GameManager.Instance.totalClickEarnedEgg}\n\n"
+               +$"{info}";
     }
 
     public void ResetInfo()
     {
         tooltipText.text = GetHoverDescription();
-        buttonText.text = $"{boosterName} (클릭당 +{level})\n" +
+        buttonText.text = $"{boosterName} (클릭당 +{level})\n\n" +
                           $"{upgradeCost} 필요";
     }
 

@@ -5,11 +5,11 @@ using UnityEngine;
 /// </summary>
 public class ChickenRiser : MonoBehaviour
 {
-    [SerializeField] private float moveAmount = 0.005f; // 클릭 시 올라갈 거리
-    [SerializeField] private float moveSpeed = 0.4f;   // 올라가는 속도
-    [SerializeField] private float topY = 10f;          // 최고 위치 Y
-    [SerializeField] private float bottomY = -10f;      // 시작 위치 Y
-    private float initialY = -9f;
+    [SerializeField] private float moveAmount = 0.1f; // 클릭 시 올라갈 거리
+    [SerializeField] private float moveSpeed = 0.1f;   // 올라가는 속도
+    [SerializeField] private float topY = 9f;          // 최고 위치 Y
+    [SerializeField] private float bottomY = -8f;      // 시작 위치 Y
+    private float initialY = -8f;
 
     private Vector3 targetPos;
 
@@ -31,6 +31,9 @@ public class ChickenRiser : MonoBehaviour
         if (transform.position.y >= topY)
         {
             ResetToBottom();
+            moveAmount += 1;
+            moveSpeed += 1;
+
         }
 
         // 클릭 체크 (마우스 기준)
@@ -53,5 +56,21 @@ public class ChickenRiser : MonoBehaviour
         Vector3 pos = transform.position;
         pos.y = bottomY;
         transform.position = pos;
+        Blink();
+    }
+
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float visibleDuration = 1f;
+
+    public void Blink()
+    {
+        StartCoroutine(BlinkRoutine());
+    }
+
+    private System.Collections.IEnumerator BlinkRoutine()
+    {
+        spriteRenderer.enabled = true;
+        yield return new WaitForSeconds(visibleDuration);
+        spriteRenderer.enabled = false;
     }
 }

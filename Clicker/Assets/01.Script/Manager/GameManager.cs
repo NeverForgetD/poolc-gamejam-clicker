@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
         // DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM("00BGM");
+    }
+
     public void AddHeight(ulong amount)
     {
         //height += amount;
@@ -45,7 +50,6 @@ public class GameManager : MonoBehaviour
     public void AddEgg(ulong amount)
     {
         egg += amount;
-        //ShootEgg();
     }
 
     public void ShootEgg()

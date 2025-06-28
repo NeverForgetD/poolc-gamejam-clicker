@@ -16,6 +16,7 @@ public class PopcornEffect : MonoBehaviour
 
     public void OnClick()
     {
+        SoundManager.Instance.PlaySFXRandomPitch("00Egg", 0.45f, 1.2f);
         GameManager.Instance.OnClick();
     }
 
@@ -34,7 +35,7 @@ public class PopcornEffect : MonoBehaviour
 
     public void CreateExplosion(Vector3 position)
     {
-        SoundManager.Instance.PlaySFX("Bloop");
+        //SoundManager.Instance.PlaySFX("Bloop");
         // Inspector에서 지정한 범위 내에서 랜덤한 공 개수 설정
         //int ballCount = Random.Range(minBallCount, maxBallCount + 1);
         int ballCount = Mathf.Min((int)(GameManager.Instance.clickBonus) + 1, 10);
