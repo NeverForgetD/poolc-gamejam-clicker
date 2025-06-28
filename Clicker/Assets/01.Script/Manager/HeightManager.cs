@@ -23,7 +23,5 @@ public class HeightManager : MonoBehaviour
     public void AddHeight(ulong amount)
     {
         height += amount;
-
-        Debug.Log($"현재 누적 : {height}");
     }
 }

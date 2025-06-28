@@ -34,7 +34,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        heightText.text = $"높이 :{FormatLengthAuto(HeightManager.Instance.height)}";
+        heightText.text = $"높이 :{FormatLengthAuto(HeightManager.Instance.height)}\n" +
+            $"달걀 : {HeightManager.Instance.height/100}개";
+        
 
         
     }
