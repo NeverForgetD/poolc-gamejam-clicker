@@ -6,7 +6,7 @@ public class TickManager : MonoBehaviour
 {
     private float timer = 0f;
 
-    private List<AutoProducer> producers = new List<AutoProducer>();
+    [SerializeField] private List<AutoProducer> producers = new List<AutoProducer>();
 
     public void AddAutoProducer(AutoProducer newProducer)
     {
@@ -23,6 +23,7 @@ public class TickManager : MonoBehaviour
             {
                 p.Tick();
             }
+            timer = 0.0f;
         }
     }
 }

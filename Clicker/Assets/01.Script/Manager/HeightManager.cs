@@ -7,7 +7,7 @@ public class HeightManager : MonoBehaviour
     /// 0 ~ 18,446,744,073,709,551,615
     /// </summary>
     public ulong height { get; set; }
-    
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
