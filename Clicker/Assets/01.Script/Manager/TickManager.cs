@@ -22,6 +22,7 @@ public class TickManager : MonoBehaviour
             foreach(var p in producers)
             {
                 p.Tick();
+                p.ResetInfo();
             }
             timer = 0.0f;
         }

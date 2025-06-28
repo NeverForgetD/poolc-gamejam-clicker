@@ -18,7 +18,7 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             // 씬 전환 시 파괴되지 않도록 설정 (필요 시)
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

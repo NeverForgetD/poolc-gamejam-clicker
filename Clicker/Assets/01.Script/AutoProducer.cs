@@ -1,11 +1,14 @@
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class AutoProducer : MonoBehaviour
+public class AutoProducer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string producerName;
     [SerializeField] private int interval;
-    [SerializeField] private ulong valuePerTick;
+    private ulong valuePerTick = 0;
+    [SerializeField] private ulong gain;
 
     [SerializeField] private int upgradeCost;
 
@@ -16,12 +19,23 @@ public class AutoProducer : MonoBehaviour
     // 업그레이드 정보
 
     private int timer = 0;
-
-    public bool CanUpgrade()
+    private void Start()
     {
-
-        return false;
+        ResetInfo();
     }
+
+    public void OnUpgradeBtnClicked()
+    {
+        if (GameManager.Instance.TryUseEgg((ulong)upgradeCost))
+        {
+            level++;
+            valuePerTick += gain;
+            upgradeCost = Mathf.RoundToInt(upgradeCost * costRatio);
+        }
+        Hide();
+        Show();
+    }
+
 
     public void Tick()
     {
@@ -29,17 +43,55 @@ public class AutoProducer : MonoBehaviour
         if (timer >= interval)
         {
             timer = 0;
-            HeightManager.Instance.AddHeight(valuePerTick);
+            GameManager.Instance.AddHeight(valuePerTick);
             totalProducedAmount += valuePerTick;
         }
     }
 
-    public string GetHoverDescription()
+    private string GetHoverDescription()
     {
+        /*
         return $"{producerName}\n" +
                $"레벨: {level}\n" +
                $"업그레이드 비용: {upgradeCost}\n" +
                $"초당 생산량: {valuePerTick} / {interval}초\n" +
-               $"총 생산량: {totalProducedAmount}";
+               $"누적 생산량: {totalProducedAmount}";
+        */
+        return $"강화레벨: {level}\n" +
+       $"초당 생산량: {valuePerTick} / {interval}초\n" +
+       $"누적 생산량: {totalProducedAmount}";
+    }
+
+    public void ResetInfo()
+    {
+        tooltipText.text = GetHoverDescription();
+        buttonText.text = $"{producerName} [{upgradeCost}]\n" +
+                            $"초당 생산량 : {valuePerTick/(ulong)interval}";
+    }
+
+
+    [SerializeField] private GameObject tooltipPanel;
+    public TextMeshProUGUI tooltipText;
+    public TextMeshProUGUI buttonText;
+
+    private void Show()
+    {
+        tooltipPanel.SetActive(true);
+        ResetInfo();
+    }
+
+    private void Hide()
+    {
+        tooltipPanel.SetActive(false);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Show();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Hide();
     }
 }
